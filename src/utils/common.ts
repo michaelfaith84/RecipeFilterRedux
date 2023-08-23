@@ -4,11 +4,15 @@ export const recipe_selectors = [
     '.easyrecipe',
     '.innerrecipe',
     '.recipe-summary.wide', // thepioneerwoman.com
-    '.wprm-recipe-container',
+    '.nk-recipe-wrap',
+    '.cwp-food-content',
+    '.tasty-recipes-entry-content',
+    '.wprm-recipe-template-custom',
     '.recipe-content',
     '.simple-recipe-pro',
     '.mv-recipe-card',
     'div[itemtype="http://schema.org/Recipe"]',
     'div[itemtype="https://schema.org/Recipe"]',
     '.Recipe__ingredientsSection',
+    '.wprm-recipe-template-food-swp',
 ];

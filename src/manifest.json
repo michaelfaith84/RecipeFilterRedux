@@ -1,9 +1,9 @@
 {
   "name": "Recipe Filter Redux",
   "author": "Michael Faith",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "manifest_version": 3,
-  "description": "A tool to skip straight to the recipe on blog based sites",
+  "description": "A tool to skip straight to the recipe on blog based sites. Based on Recipe Filter.",
   "icons": {
     "128": "assets/icons/icon-128.png"
   },
@@ -19,7 +19,8 @@
   "web_accessible_resources": [
     {
       "resources": [],
-      "matches": ["<all_urls>"]
+      "matches": ["<all_urls>"],
+      "exclude_matches": ["*://*github/*"]
     }
   ]
 }

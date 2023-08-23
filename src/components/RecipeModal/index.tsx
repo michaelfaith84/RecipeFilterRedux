@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Modal, Button, Container } from 'react-bootstrap';
 import { sendMessage } from 'utils/sendMessages';
 import { recipe_selectors } from 'utils/common';
+import 'utils/style.scss';
 
 export type RecipeModalTypes = {
     isVisible: boolean;
@@ -17,6 +18,12 @@ export const RecipeModal = (props: RecipeModalTypes) => {
         handleClose();
     };
 
+    const handleEscape = (e: KeyboardEvent) => {
+        if (e.code === 'Escape') {
+            handleClose();
+        }
+    };
+
     const getContent = () => {
         let content: Node | undefined | null;
         recipe_selectors.forEach((e) => {
@@ -25,12 +32,6 @@ export const RecipeModal = (props: RecipeModalTypes) => {
             }
         });
         return content ?? null;
-    };
-
-    const handleEscape = (e: KeyboardEvent) => {
-        if (e.code === 'Escape') {
-            handleClose();
-        }
     };
 
     useEffect(() => {
@@ -46,13 +47,19 @@ export const RecipeModal = (props: RecipeModalTypes) => {
     }, []);
 
     return (
-        <Modal show={show}>
-            <Modal.Body>
+        <Modal show={show} className={'mt-md-5 pt-md-2'}>
+            <Modal.Header style={{ backgroundColor: 'lightgray' }}>
                 <Container style={{ flex: 1, display: 'flex', justifyContent: 'space-between' }}>
                     <Modal.Title>Recipe Filter Redux</Modal.Title>
-                    <Button onClick={addToBlacklist}>Disable</Button>
-                    <Button onClick={handleClose}>Close</Button>
+                    <Button variant={'outline-danger'} onClick={addToBlacklist}>
+                        Disable
+                    </Button>
+                    <Button variant={'outline-primary'} onClick={handleClose}>
+                        Close
+                    </Button>
                 </Container>
+            </Modal.Header>
+            <Modal.Body>
                 <div dangerouslySetInnerHTML={{ __html: content }} style={{ padding: 0 }}></div>
             </Modal.Body>
         </Modal>

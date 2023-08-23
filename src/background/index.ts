@@ -59,7 +59,7 @@ class Background {
                 case 'get_blacklist':
                     const blacklist = await localforage.getItem('blacklist');
                     // @ts-ignore
-                    this._blacklist = blacklist;
+                    this._blacklist = blacklist ?? [];
                     return {
                         type: 'SUCCESS',
                         data: this._blacklist,

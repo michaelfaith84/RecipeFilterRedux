@@ -1,7 +1,7 @@
 {
     "name": "recipe-filter-redux",
-    "version": "1.0.0",
-    "description": "A tool to skip straight to the recipe on blog based sites",
+    "version": "0.1.0",
+    "description": "A tool to skip straight to the recipe on blog based sites. Based on Recipe Filter.",
     "main": "webpack.config.js",
     "scripts": {
         "dev:chrome": "cross-env NODE_ENV=development TARGET=chrome webpack",
